@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internshub</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="h-full antialiased text-slate-800 dark:text-slate-100 bg-slate-50 dark:bg-slate-950">
+    <div id="root" class="min-h-screen flex flex-col">
+      <!-- Premium Glassmorphism Loading Screen (unmounts automatically on React mount) -->
+      <style>
+        .web-loader-container {
+          position: fixed;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, #0b0f19 0%, #1e1b4b 50%, #2e1065 100%);
+          font-family: 'Outfit', 'Inter', sans-serif;
+          color: #ffffff;
+          z-index: 9999;
+        }
+        .web-loader-logo {
+          width: 80px;
+          height: 80px;
+          background: rgba(139, 92, 246, 0.15);
+          border: 1.5px solid rgba(139, 92, 246, 0.4);
+          border-radius: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 24px;
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          animation: pulse 2s infinite ease-in-out;
+        }
+        .web-loader-logo svg {
+          width: 40px;
+          height: 40px;
+          fill: none;
+          stroke: #a78bfa;
+          stroke-width: 2;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        .web-loader-title {
+          font-size: 28px;
+          font-weight: 700;
+          margin-bottom: 8px;
+          letter-spacing: -0.5px;
+        }
+        .web-loader-subtitle {
+          font-size: 14px;
+          color: #94a3b8;
+          margin-bottom: 48px;
+        }
+        .web-loader-spinner {
+          width: 28px;
+          height: 28px;
+          border: 2.5px solid rgba(139, 92, 246, 0.2);
+          border-top-color: #8b5cf6;
+          border-radius: 50%;
+          animation: spin 1s infinite linear;
+        }
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); opacity: 0.95; }
+          50% { transform: scale(1.05); opacity: 1; box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.5); }
+        }
+      </style>
+      <div class="web-loader-container">
+        <div class="web-loader-logo">
+          <svg viewBox="0 0 24 24">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
+          </svg>
+        </div>
+        <div class="web-loader-title">InternsHub</div>
+        <div class="web-loader-subtitle">Connecting Future Leaders</div>
+        <div class="web-loader-spinner"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
