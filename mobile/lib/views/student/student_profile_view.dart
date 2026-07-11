@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/foundation.dart' show kIsWeb, kReleaseMode;
 import '../../providers/auth_provider.dart';
 import '../../widgets/glass_card.dart';
 import '../../widgets/premium_toast.dart';
@@ -23,9 +23,11 @@ class _StudentProfileViewState extends State<StudentProfileView> {
 
 
   Future<void> _launchWebProfile() async {
-    final String url = kIsWeb 
-        ? 'http://localhost:5173/dashboard/student/profile'
-        : 'http://10.0.2.2:5173/dashboard/student/profile';
+    final String url = kReleaseMode
+        ? 'https://internshub-06.vercel.app/dashboard/student/profile'
+        : (kIsWeb 
+            ? 'http://localhost:5173/dashboard/student/profile'
+            : 'http://10.0.2.2:5173/dashboard/student/profile');
 
     final uri = Uri.parse(url);
     try {

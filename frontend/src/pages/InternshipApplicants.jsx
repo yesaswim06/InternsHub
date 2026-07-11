@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../services/api';
+import api, { getAssetUrl } from '../services/api';
 import { FileText, Calendar, Check, X, ShieldAlert, Clock, RefreshCw, Send, CheckSquare } from 'lucide-react';
 import GlassCard from '../components/GlassCard';
 import Modal from '../components/Modal';
@@ -175,7 +175,7 @@ const InternshipApplicants = () => {
                     {/* Resume download link */}
                     <td className="px-6 py-4">
                       <a
-                        href={`http://localhost:5000${app.resume}`}
+                        href={getAssetUrl(app.resume)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 text-xs font-semibold text-primary-500 hover:underline"

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { useAuth } from '../context/AuthContext';
-import api from '../services/api';
+import api, { getAssetUrl } from '../services/api';
 import { User, Mail, BookOpen, Tag, Link2, FileText, Plus, Trash2, Save, UploadCloud } from 'lucide-react';
 import GlassCard from '../components/GlassCard';
 import toast from 'react-hot-toast';
@@ -129,7 +129,7 @@ const StudentProfile = () => {
                 <div className="flex items-center gap-2 truncate">
                   <FileText size={18} className="text-primary-500 flex-shrink-0" />
                   <a
-                    href={`http://localhost:5000${user.profile.resume}`}
+                    href={getAssetUrl(user.profile.resume)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-bold hover:underline text-slate-700 dark:text-slate-355 truncate"

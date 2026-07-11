@@ -4,6 +4,18 @@ const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
 });
 
+// Helper function to resolve absolute asset URLs in local and production environments
+export const getAssetUrl = (path) => {
+  if (!path) return '';
+  if (path.startsWith('http://') || path.startsWith('https://')) return path;
+  
+  const apiURL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+  // Remove the trailing /api to get the base backend URL
+  const serverURL = apiURL.endsWith('/api') ? apiURL.slice(0, -4) : apiURL;
+  
+  return `${serverURL}${path.startsWith('/') ? '' : '/'}${path}`;
+};
+
 // Interceptor to automatically add Bearer token to all requests
 api.interceptors.request.use(
   (config) => {

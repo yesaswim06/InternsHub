@@ -4,6 +4,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
   static String get baseUrl {
+    if (kReleaseMode) {
+      return 'https://internshub-06.up.railway.app/api';
+    }
     if (kIsWeb) {
       return 'http://localhost:5000/api';
     }

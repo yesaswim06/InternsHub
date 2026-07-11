@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import api from '../services/api';
+import api, { getAssetUrl } from '../services/api';
 import { Search, MapPin, Briefcase, DollarSign, Calendar, SlidersHorizontal, Eye, Tag } from 'lucide-react';
 import GlassCard from '../components/GlassCard';
 import { CardSkeleton } from '../components/LoadingSkeleton';
@@ -227,7 +227,7 @@ const SearchInternships = () => {
                         <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800/80 rounded-xl flex items-center justify-center border border-slate-200/50 dark:border-slate-800 overflow-hidden">
                           {job.company?.logo ? (
                             <img
-                              src={`http://localhost:5000${job.company.logo}`}
+                              src={getAssetUrl(job.company.logo)}
                               alt={job.company.companyName}
                               className="w-full h-full object-cover"
                             />
