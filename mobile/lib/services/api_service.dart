@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
   static String get baseUrl {
-    return 'https://internshub-06.up.railway.app/api/v1';
+    return 'https://internshub-06.up.railway.app/api/';
   }
 
   late Dio _dio;
