@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-<<<<<<< HEAD
 let isConnected = false;
 let dbError = null;
 
@@ -40,16 +39,3 @@ const getDBStatus = () => ({
 });
 
 module.exports = { connectDB, getDBStatus };
-=======
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/internship_db');
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error(`Error connecting to MongoDB: ${error.message}`);
-    process.exit(1);
-  }
-};
-
-module.exports = connectDB;
->>>>>>> 5ad54ac356437c46391d42f18547dd0a7250531b
