@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const api = axios.create({
-<<<<<<< HEAD
   baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
 });
 
@@ -17,11 +16,6 @@ export const getAssetUrl = (path) => {
   return `${serverURL}${path.startsWith('/') ? '' : '/'}${path}`;
 };
 
-=======
-  baseURL: import.meta.env.VITE_API_URL || 'https://internshub-06.up.railway.app/api/',
-});
-
->>>>>>> 5ad54ac356437c46391d42f18547dd0a7250531b
 // Interceptor to automatically add Bearer token to all requests
 api.interceptors.request.use(
   (config) => {
