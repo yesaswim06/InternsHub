@@ -2,11 +2,16 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const dotenv = require('dotenv');
+<<<<<<< HEAD
 const { connectDB, getDBStatus } = require('./config/db');
+=======
+const connectDB = require('./config/db');
+>>>>>>> 5ad54ac356437c46391d42f18547dd0a7250531b
 
 // Load environment variables
 dotenv.config();
 
+<<<<<<< HEAD
 // Validate required environment variables on startup
 const requiredEnv = ['MONGO_URI', 'JWT_SECRET', 'EMAIL_USER', 'EMAIL_PASS'];
 const missingEnv = requiredEnv.filter((name) => !process.env[name]);
@@ -24,10 +29,14 @@ if (missingEnv.length > 0) {
 }
 
 // Connect to Database asynchronously
+=======
+// Connect to Database
+>>>>>>> 5ad54ac356437c46391d42f18547dd0a7250531b
 connectDB();
 
 const app = express();
 
+<<<<<<< HEAD
 // Production-ready CORS Configuration
 const allowedOrigins = [
   'https://internshub-06.vercel.app',
@@ -52,6 +61,10 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
 }));
 
+=======
+// Middleware
+app.use(cors());
+>>>>>>> 5ad54ac356437c46391d42f18547dd0a7250531b
 app.use(express.json());
 
 // Serve Static Upload Folders
@@ -70,6 +83,7 @@ app.use('/api/company', companyRoutes);
 app.use('/api/internships', internshipRoutes);
 app.use('/api/admin', adminRoutes);
 
+<<<<<<< HEAD
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   const dbStatus = getDBStatus();
@@ -123,6 +137,10 @@ app.get('/', (req, res) => {
       </html>
     `);
   }
+=======
+// Base route
+app.get('/', (req, res) => {
+>>>>>>> 5ad54ac356437c46391d42f18547dd0a7250531b
   res.send('Internship Management System API is running...');
 });
 
@@ -143,7 +161,11 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 
 const server = app.listen(PORT, () => {
+<<<<<<< HEAD
   console.log(`🚀 Server running in ${process.env.NODE_ENV || 'production'} mode on port ${PORT}`);
+=======
+  console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
+>>>>>>> 5ad54ac356437c46391d42f18547dd0a7250531b
 });
 
 // Handle unhandled promise rejections

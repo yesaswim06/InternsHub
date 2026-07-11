@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+<<<<<<< HEAD
 import api, { getAssetUrl } from '../services/api';
+=======
+import api from '../services/api';
+>>>>>>> 5ad54ac356437c46391d42f18547dd0a7250531b
 import { useAuth } from '../context/AuthContext';
 import {
   MapPin,
@@ -165,7 +169,11 @@ const InternshipDetail = () => {
             <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center border border-slate-200/50 dark:border-slate-800 overflow-hidden">
               {job.company?.logo ? (
                 <img
+<<<<<<< HEAD
                   src={getAssetUrl(job.company.logo)}
+=======
+                  src={`http://localhost:5000${job.company.logo}`}
+>>>>>>> 5ad54ac356437c46391d42f18547dd0a7250531b
                   alt={job.company.companyName}
                   className="w-full h-full object-cover"
                 />

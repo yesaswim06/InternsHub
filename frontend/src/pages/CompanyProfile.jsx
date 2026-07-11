@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../context/AuthContext';
+<<<<<<< HEAD
 import api, { getAssetUrl } from '../services/api';
+=======
+import api from '../services/api';
+>>>>>>> 5ad54ac356437c46391d42f18547dd0a7250531b
 import { Building, MapPin, Globe, ClipboardList, Save, UploadCloud } from 'lucide-react';
 import GlassCard from '../components/GlassCard';
 import toast from 'react-hot-toast';
@@ -86,7 +90,11 @@ const CompanyProfile = () => {
             <div className="w-24 h-24 bg-slate-100 dark:bg-slate-800/80 rounded-3xl flex items-center justify-center border border-slate-200/50 dark:border-slate-850 overflow-hidden mx-auto shadow-inner">
               {user?.companyProfile?.logo ? (
                 <img
+<<<<<<< HEAD
                   src={getAssetUrl(user.companyProfile.logo)}
+=======
+                  src={`http://localhost:5000${user.companyProfile.logo}`}
+>>>>>>> 5ad54ac356437c46391d42f18547dd0a7250531b
                   alt={user.companyProfile.companyName}
                   className="w-full h-full object-cover"
                 />

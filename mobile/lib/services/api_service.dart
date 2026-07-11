@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
   static String get baseUrl {
+<<<<<<< HEAD
     if (kReleaseMode) {
       return 'https://internshub-06.up.railway.app/api';
     }
@@ -14,6 +15,9 @@ class ApiService {
       return 'http://10.0.2.2:5000/api';
     }
     return 'http://localhost:5000/api';
+=======
+    return 'https://internshub-06.up.railway.app/api/';
+>>>>>>> 5ad54ac356437c46391d42f18547dd0a7250531b
   }
 
   late Dio _dio;

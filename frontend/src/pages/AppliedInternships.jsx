@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import api, { getAssetUrl } from '../services/api';
+=======
+import api from '../services/api';
+>>>>>>> 5ad54ac356437c46391d42f18547dd0a7250531b
 import { CheckCircle2, MapPin, DollarSign, Calendar, FileText, Download } from 'lucide-react';
 import GlassCard from '../components/GlassCard';
 import { CardSkeleton } from '../components/LoadingSkeleton';
@@ -109,7 +113,11 @@ const AppliedInternships = () => {
                 </span>
                 
                 <a
+<<<<<<< HEAD
                   href={getAssetUrl(app.resume)}
+=======
+                  href={`http://localhost:5000${app.resume}`}
+>>>>>>> 5ad54ac356437c46391d42f18547dd0a7250531b
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-primary-500 hover:underline transition"
