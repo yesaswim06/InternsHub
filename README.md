@@ -91,3 +91,16 @@ Use these pre-configured credentials to explore the platform:
 *   **Backend Hosting**: Railway (Automated CI/CD from `/backend` directory).
 *   **Frontend Hosting**: Vercel (Production-ready React build).
 *   **Environment Variables**: Ensure `MONGO_URI`, `JWT_SECRET`, `EMAIL_USER`, and `EMAIL_PASS` are configured in the Railway dashboard for the API to function.
+
+## 👤 Author
+
+**Naga Yesaswi Bhargav Mudigonda**
+B.Tech Information Technology, NRI Institute of Technology
+- GitHub: [@yesaswim06](https://github.com/yesaswim06)
+- LinkedIn: [www.linkedin.com/in/yesaswim06](https://www.linkedin.com/in/yesaswim06/) 
+
+---
+
+## 📜 License
+
+This is Major project was developed as part of the **Avishkarana Andhra Summer Internship** program and is intended for educational and portfolio purposes.
